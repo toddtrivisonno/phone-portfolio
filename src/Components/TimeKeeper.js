@@ -1,11 +1,13 @@
 import React from 'react';
+import DisplayClock from './DisplayClock';
+import CountdownTimer from './CountdownTimer';
 
-class Clock extends React.Component {
+class TimeKeeper extends React.Component {
 
    constructor(props) {
       super(props);
       this.state = {
-         date: new Date()
+         date: new Date(),
       };
    }
 
@@ -28,15 +30,12 @@ class Clock extends React.Component {
 
    render() {
       return (
-         <div className="container mx-auto text-center">
-            <h1 className="display-4">{this.state.date.toLocaleTimeString()}</h1>
-            <h5>{this.state.date.toLocaleDateString()}</h5>
-         </div>
+         <React.Fragment>
+            <DisplayClock time={this.state.date} />
+            <CountdownTimer time={this.state.date} />
+         </React.Fragment>
       )
-
    }
-
-
 }
 
-export default Clock;
+export default TimeKeeper;

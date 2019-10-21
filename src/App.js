@@ -2,7 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Title from './Components/Title.js';
-import Clock from './Components/Clock.js';
+import TimeKeeper from './Components/TimeKeeper.js';
+import DisplayClock from './Components/DisplayClock';
+import CountdownTimer from './Components/CountdownTimer';
 
 
 // import all my components
@@ -13,10 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Clock />
-        <div className="App" >
-          <img src='Todd_AVATAR_100x100.png' className="App-logo" alt="logo" />
-        </div>
+        <TimeKeeper />
       </React.Fragment>
     );
   }
