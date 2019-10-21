@@ -4,6 +4,7 @@ import './App.css';
 import Title from './Components/Title.js';
 import TimeKeeper from './Components/TimeKeeper.js';
 import DisplayClock from './Components/DisplayClock';
+import CountdownTimer from './Components/CountdownTimer';
 
 
 // import all my components
@@ -14,7 +15,6 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <DisplayClock />      
         <TimeKeeper />
       </React.Fragment>
     );

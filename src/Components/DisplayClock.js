@@ -1,12 +1,10 @@
 import React from 'react';
-import TimeKeeper from './TimeKeeper';
 
 class DisplayClock extends React.Component {
 
    constructor(props) {
       super(props);
       this.state = {
-         date: new Date(),
          isChecked: false
       };
       this.SwitchTime = this.SwitchTime.bind(this);
@@ -23,7 +21,7 @@ class DisplayClock extends React.Component {
       return (
 
          <div className="container mx-auto text-center mt-5">
-            <h1 className="display-4 mb-0">{this.state.date.toLocaleTimeString(
+            <h1 className="display-4 mb-0">{this.props.time.toLocaleTimeString(
                this.state.isChecked ? 'it-IT' : 'en-US'
             )}
             </h1>
@@ -31,7 +29,7 @@ class DisplayClock extends React.Component {
                <input type="checkbox" className="custom-control-input" id="customSwitch" onClick={this.SwitchTime}/>
                <label className="custom-control-label" htmlFor="customSwitch">24hr</label>
             </div>
-            <h5>{this.state.date.toLocaleDateString("en-US", {
+            <h5>{this.props.time.toLocaleDateString("en-US", {
                weekday: "long", year: "numeric", month: "short",
                day: "numeric"
             })}</h5>
